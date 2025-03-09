@@ -1,8 +1,8 @@
 # ASCIIme
-Image to ASCII generator
+PNG to ASCII generator
 
 ## Usage
 ```bash
-python3 main.py <path-to-image>
+python3 main.py <filename>
 ```
 The result is stored in a text file ascii.txt
