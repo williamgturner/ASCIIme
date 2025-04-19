@@ -1,9 +1,22 @@
 from PIL import Image
 import numpy as np
+import sys
+import os
 
-image = Image.open('test2.jpg')
+if len(sys.argv) < 2:
+    print("Usage: python3 main.py <imagePath>")
+    sys.exit(1)
+
+if not os.path.isfile(sys.argv[1]):
+    print("Error: File not found. Please check the path and try again.")
+    sys.exit(1)
+
+image = Image.open(sys.argv[1])
 width, height = image.size
-image = image.resize((int(width * 0.3), int(height * 0.3)))
+aspectRatio = height/width
+new_width = 50
+new_height = int(aspectRatio * new_width * 0.5)
+image = image.resize((new_width, new_height))
 width, height = image.size
 grey = image.convert('L')
 pixel_array = np.array(grey)
