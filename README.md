@@ -3,7 +3,7 @@ JPG to ASCII generator
 
 ## Usage
 ```bash
-python3 main.py <filename>
+python3 main.py <path/to/file>
 ```
 The result is stored in a text file ascii.txt
 
